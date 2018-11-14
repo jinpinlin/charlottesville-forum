@@ -1,3 +1,14 @@
-<p>
-  market-list works!
-</p>
+<div class="container">
+  <ul class="list-group" >
+    <li class="list-group-item" *ngFor="let entry of MarketEntries">
+      {{entry.title}}, 
+      {{entry.desc}},
+      <ul>
+          <li *ngFor="let item of entry.marketItems">
+              {{item.itemName}}, {{item.itemNum}}
+         </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
