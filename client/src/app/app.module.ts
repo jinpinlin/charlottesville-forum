@@ -14,6 +14,8 @@ import { RidesEntryComponent } from './rides/rides-entry/rides-entry.component';
 import { RidesComponent } from './rides/rides.component';
 import { RentingComponent } from './renting/renting.component';
 import { MarketComponent } from './market/market.component';
+import { OthersComponent } from './others/others.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { MarketComponent } from './market/market.component';
     RidesComponent,
     RidesListComponent,
     RidesEntryComponent,
+    OthersComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
