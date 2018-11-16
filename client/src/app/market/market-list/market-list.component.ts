@@ -1,41 +1,66 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketEntry } from '../market-entry.model';
 
+import * as sampleData1 from 'src/app/share/samples/166bfaabf1bc10df.json';
+import * as sampleData2 from 'src/app/share/samples/166ca5af70615e18.json';
 const MARKETENTRIES = [
   new MarketEntry(
-    'sell lamp',
-    'sell this second-hand lamp',
+    '\u5356',
+    sampleData2.snippet,
+    sampleData2.payload.headers[32].value,
+    false,
     [
-      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG'
+      'http://media.4rgos.it/i/Argos/5399785_R_Z001A?$Web$&$DefaultPDP570$'
     ],
     [
       {
-        itemName: 'lamp',
-        itemNum: 1
+        itemName: '\u81EA\u884C\u8F66',
+        itemNum: 1,
+        price: 55,
+        image: 'https://img13.360buyimg.com/n1/jfs/t27568/266/313579453/435818/ba562940/5b8e2eefN8e950904.jpg'
       },
       {
-        itemName: 'second lamp',
-        itemNum: 2
+        itemName: '\u81EA\u884C\u8F66',
+        itemNum: 1,
+        price: 55,
+        image: 'https://img13.360buyimg.com/n1/jfs/t27568/266/313579453/435818/ba562940/5b8e2eefN8e950904.jpg'
       }
     ]
   ),
   new MarketEntry(
-    'sell cellphone',
-    'sell this second-hand cellphone',
+    'sell the pan',
+    'I want to sell the pan, see the price and fig below',
+    'Doug <mmagou2017@gmail.com>',
+    true,
     [
-      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG'
+      'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
     ],
     [
       {
-        itemName: 'cellphone',
-        itemNum: 1
-      },
-      {
-        itemName: 'second cellphone',
-        itemNum: 2
+        itemName: 'pan',
+        itemNum: 1,
+        price: 5,
+        image: 'https://mail.google.com/mail/u/1?ui=2&ik=2957901240&attid=0.1.7.0.1&permmsgid=msg-f:1617215063408365338&th=1671808823ddcf1a&view=att&disp=safe&realattid=f_johydzw82'
       }
     ]
-  )
+  ),
+  new MarketEntry(
+    sampleData1.payload.headers[32].value,
+    sampleData1.snippet,
+    sampleData1.payload.headers[33].value,
+    true,
+    [
+      'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
+    ],
+    [
+      {
+        itemName: undefined,
+        itemNum: undefined,
+        price: undefined,
+        image: 'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
+      }
+    ]
+  ),
 ];
 
 @Component({
