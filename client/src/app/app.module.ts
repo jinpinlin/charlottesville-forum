@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { HomeComponent } from './core/home/home.component';
 import { MarketListComponent } from './market/market-list/market-list.component';
-import { MarketEntryComponent } from './market/market-entry/market-entry.component';
 import { RentingListComponent } from './renting/renting-list/renting-list.component';
 import { RentingEntryComponent } from './renting/renting-entry/renting-entry.component';
 import { RidesListComponent } from './rides/rides-list/rides-list.component';
@@ -16,6 +15,8 @@ import { RentingComponent } from './renting/renting.component';
 import { MarketComponent } from './market/market.component';
 import { OthersComponent } from './others/others.component';
 import { AboutComponent } from './about/about.component';
+import { MarketDetailComponent } from './market/market-detail/market-detail.component';
+import { MarketEditComponent } from './market/market-edit/market-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,6 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     MarketComponent,
     MarketListComponent,
-    MarketEntryComponent,
     RentingComponent,
     RentingListComponent,
     RentingEntryComponent,
@@ -33,6 +33,8 @@ import { AboutComponent } from './about/about.component';
     RidesEntryComponent,
     OthersComponent,
     AboutComponent,
+    MarketDetailComponent,
+    MarketEditComponent,
   ],
   imports: [
     BrowserModule,

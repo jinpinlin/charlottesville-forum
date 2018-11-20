@@ -6,9 +6,13 @@ import { RentingComponent } from './renting/renting.component';
 import { RidesComponent } from './rides/rides.component';
 import { OthersComponent } from './others/others.component';
 import { AboutComponent } from './about/about.component';
+import { MarketEditComponent } from './market/market-edit/market-edit.component';
+import { MarketDetailComponent } from './market/market-detail/market-detail.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'market/edit', component: MarketEditComponent},
+  {path: 'market/detail', component: MarketDetailComponent},
   {path: 'market', component: MarketComponent},
   {path: 'renting', component: RentingComponent},
   {path: 'rides', component: RidesComponent},

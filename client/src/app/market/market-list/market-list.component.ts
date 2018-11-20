@@ -5,9 +5,9 @@ import * as sampleData1 from 'src/app/share/samples/166bfaabf1bc10df.json';
 import * as sampleData2 from 'src/app/share/samples/166ca5af70615e18.json';
 const MARKETENTRIES = [
   new MarketEntry(
-    '\u5356',
+    sampleData2.payload.headers.find(x => x.name === 'Subject').value,
     sampleData2.snippet,
-    sampleData2.payload.headers[32].value,
+    sampleData2.payload.headers.find(x => x.name === 'From').value,
     false,
     [
       'http://media.4rgos.it/i/Argos/5399785_R_Z001A?$Web$&$DefaultPDP570$'
@@ -45,9 +45,9 @@ const MARKETENTRIES = [
     ]
   ),
   new MarketEntry(
-    sampleData1.payload.headers[32].value,
+    sampleData1.payload.headers.find(x => x.name === 'Subject').value,
     sampleData1.snippet,
-    sampleData1.payload.headers[33].value,
+    sampleData1.payload.headers.find(x => x.name === 'From').value,
     true,
     [
       'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
@@ -70,7 +70,6 @@ const MARKETENTRIES = [
 })
 
 export class MarketListComponent implements OnInit {
-  // constructor(private MarketItems: MarketItem[]) { }
   public MarketEntries;
   constructor() {}
   ngOnInit() {

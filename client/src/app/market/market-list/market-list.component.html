@@ -49,6 +49,14 @@
               <p class="card-text mb-auto">{{entry.desc | slice:0:110}}</p>
               <!-- <a href="#">Continue reading</a> -->
             </div>
+            <!-- <li *ngFor="let imagePath of entry.imagePaths" style="float: left">
+              <div class="card" style="width: 8rem;">
+                  <img
+                  [src]="imagePath"
+                  class="card-img-top img-responsive rounded">
+              </div>
+            </li> -->
+
             <li *ngFor="let item of entry.marketItems" style="float: left">
               <div class="card" style="width: 8rem;">
                 <img class="card-img-top img-responsive rounded"
