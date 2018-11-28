@@ -17,6 +17,7 @@ import { OthersComponent } from './others/others.component';
 import { AboutComponent } from './about/about.component';
 import { MarketDetailComponent } from './market/market-detail/market-detail.component';
 import { MarketEditComponent } from './market/market-edit/market-edit.component';
+import { NewPostComponent } from './core/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MarketEditComponent } from './market/market-edit/market-edit.component'
     AboutComponent,
     MarketDetailComponent,
     MarketEditComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,

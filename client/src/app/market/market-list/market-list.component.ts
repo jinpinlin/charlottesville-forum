@@ -5,6 +5,7 @@ import * as sampleData1 from 'src/app/share/samples/166bfaabf1bc10df.json';
 import * as sampleData2 from 'src/app/share/samples/166ca5af70615e18.json';
 const MARKETENTRIES = [
   new MarketEntry(
+    '1',
     sampleData2.payload.headers.find(x => x.name === 'Subject').value,
     sampleData2.snippet,
     sampleData2.payload.headers.find(x => x.name === 'From').value,
@@ -28,6 +29,7 @@ const MARKETENTRIES = [
     ]
   ),
   new MarketEntry(
+    '2',
     'sell the pan',
     'I want to sell the pan, see the price and fig below',
     'Doug <mmagou2017@gmail.com>',
@@ -45,6 +47,7 @@ const MARKETENTRIES = [
     ]
   ),
   new MarketEntry(
+    '3',
     sampleData1.payload.headers.find(x => x.name === 'Subject').value,
     sampleData1.snippet,
     sampleData1.payload.headers.find(x => x.name === 'From').value,
