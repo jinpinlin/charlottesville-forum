@@ -78,7 +78,7 @@ export class DataService {
 
   MarketEntries: MarketEntry[] = MARKETENTRIES.filter( entry => entry.category === 'market');
 
-  categories = ['Market', 'Renting', 'Rides', 'Others'];
+  categories = ['market', 'renting', 'rides', 'others'];
 
   constructor() { }
 
@@ -98,7 +98,7 @@ export class DataService {
   addEntry(entry: Entry) {
     console.log(entry.category);
     switch (entry.category) {
-      case 'Market': this.addMarketEntry(entry);
+      case 'market': this.addMarketEntry(entry);
     }
   }
 }

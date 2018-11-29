@@ -30,7 +30,7 @@ export class NewPostComponent implements OnInit {
     console.log(this.newEntry.id);
   }
 
-  onAddEntry( entry: Entry) {
+  onAddEntry() {
     this.dataService.addEntry(this.newEntry);
     this.newEntry = Object.assign({}, DEFAULT_ENTRY);
   }
