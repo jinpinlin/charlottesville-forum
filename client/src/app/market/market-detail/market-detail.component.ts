@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/share/data.service';
+import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { MarketEntry } from '../market-entry.model';
+import { MarketEntry } from '../../models/market-entry.model';
 
 @Component({
   selector: 'app-market-detail',

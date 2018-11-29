@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MarketEntry } from '../market-entry.model';
-import { DataService } from 'src/app/share/data.service';
+import { MarketEntry } from '../../models/market-entry.model';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-market-list',

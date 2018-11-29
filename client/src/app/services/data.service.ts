@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { MarketEntry } from '../market/market-entry.model';
-import * as sampleData1 from 'src/app/share/samples/166bfaabf1bc10df.json';
-import * as sampleData2 from 'src/app/share/samples/166ca5af70615e18.json';
+import { MarketEntry } from '../models/market-entry.model';
+import * as sampleData1 from '../samples/166bfaabf1bc10df.json';
+import * as sampleData2 from '../samples/166ca5af70615e18.json';
+import { Entry } from '../models/entry.model';
 
 const MARKETENTRIES = [
   new MarketEntry(
@@ -10,6 +11,7 @@ const MARKETENTRIES = [
     sampleData2.payload.headers.find(x => x.name === 'Subject').value,
     sampleData2.snippet,
     sampleData2.payload.headers.find(x => x.name === 'From').value,
+    'market',
     false,
     [
       'http://media.4rgos.it/i/Argos/5399785_R_Z001A?$Web$&$DefaultPDP570$'
@@ -34,6 +36,7 @@ const MARKETENTRIES = [
     'sell the pan',
     'I want to sell the pan, see the price and fig below',
     'Doug <mmagou2017@gmail.com>',
+    'market',
     true,
     [
       'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
@@ -52,6 +55,7 @@ const MARKETENTRIES = [
     sampleData1.payload.headers.find(x => x.name === 'Subject').value,
     sampleData1.snippet,
     sampleData1.payload.headers.find(x => x.name === 'From').value,
+    'market',
     true,
     [
       'http://pic.baike.soso.com/p/20140521/20140521204520-544920324.jpg'
@@ -72,7 +76,9 @@ const MARKETENTRIES = [
 })
 export class DataService {
 
-  MarketEntries: MarketEntry[] = MARKETENTRIES;
+  MarketEntries: MarketEntry[] = MARKETENTRIES.filter( entry => entry.category === 'market');
+
+  categories = ['Market', 'Renting', 'Rides', 'Others'];
 
   constructor() { }
 
@@ -87,5 +93,12 @@ export class DataService {
   addMarketEntry(marketEntry: MarketEntry) {
     marketEntry.id = (this.MarketEntries.length + 1).toString();
     this.MarketEntries.push(marketEntry);
+  }
+
+  addEntry(entry: Entry) {
+    console.log(entry.category);
+    switch (entry.category) {
+      case 'Market': this.addMarketEntry(entry);
+    }
   }
 }
