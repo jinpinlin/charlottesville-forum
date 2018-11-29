@@ -8,7 +8,6 @@ import { OthersComponent } from './others/others.component';
 import { AboutComponent } from './about/about.component';
 import { MarketEditComponent } from './market/market-edit/market-edit.component';
 import { MarketDetailComponent } from './market/market-detail/market-detail.component';
-import { resolveDirective } from '@angular/core/src/render3/instructions';
 import { NewPostComponent } from './core/new-post/new-post.component';
 
 const routes: Routes = [

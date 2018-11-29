@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Entry } from 'src/app/share/entry.model';
 
 @Component({
   selector: 'app-new-post',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-post.component.css']
 })
 export class NewPostComponent implements OnInit {
-
+  newEntries: Entry;
+  user: 'test@test.com';
+  
   constructor() { }
 
   ngOnInit() {
