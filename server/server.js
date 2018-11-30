@@ -1,7 +1,12 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const uuid = require('uuid/v4');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+var restRouter = require('./routes/rest');
+
+const app = express();
+const port = 3000;
+
+
+app.use('/api/v1', restRouter);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
