@@ -1,7 +1,7 @@
 <div class="container">
   
   <div class="col-xs-12 my-3">
-      <button class="btn btn-success">New Post</button>
+      <button class="btn btn-success" [routerLink]="['/new-post']" routerLinkActive="router-link-active" >New Post</button>
   </div>
   <hr>
   <!-- <ul class="list-group" >
@@ -39,7 +39,7 @@
   </ul>
 </div> -->
 <ul style="list-style: none">
-    <div class="container" *ngFor="let entry of MarketEntries">
+    <div class="container" *ngFor="let entry of marketEntries">
         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <h5 class="mb-0">

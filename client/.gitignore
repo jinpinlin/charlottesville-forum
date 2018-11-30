@@ -6,8 +6,10 @@ e2e_test.*
 node_modules
 bower_components
 tools/gulp-tasks/cldr/cldr-data/
+
 documentation
-src/app/share/samples
+src/app/samples
+
 # Include when developing application packages.
 pubspec.lock
 .c9
