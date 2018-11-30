@@ -11,6 +11,7 @@ const MARKETENTRIES = [
     sampleData2.payload.headers.find(x => x.name === 'Subject').value,
     sampleData2.snippet,
     sampleData2.payload.headers.find(x => x.name === 'From').value,
+    'test1@test.com',
     'market',
     false,
     [
@@ -36,6 +37,7 @@ const MARKETENTRIES = [
     'sell the pan',
     'I want to sell the pan, see the price and fig below',
     'Doug <mmagou2017@gmail.com>',
+    'test2@test.com',
     'market',
     true,
     [
@@ -55,6 +57,7 @@ const MARKETENTRIES = [
     sampleData1.payload.headers.find(x => x.name === 'Subject').value,
     sampleData1.snippet,
     sampleData1.payload.headers.find(x => x.name === 'From').value,
+    'test3@test.com',
     'market',
     true,
     [
@@ -79,6 +82,7 @@ export class DataService {
   MarketEntries: MarketEntry[] = MARKETENTRIES.filter( entry => entry.category === 'market');
 
   categories = ['market', 'renting', 'rides', 'others'];
+  nego_options = [true, false];
 
   constructor() { }
 

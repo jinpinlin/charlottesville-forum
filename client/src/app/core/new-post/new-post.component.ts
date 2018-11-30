@@ -7,9 +7,10 @@ const DEFAULT_ENTRY: Entry = Object.freeze({
   title: '',
   desc: '',
   user: '',
+  email: '',
   category: '',
-  nego: false,
-  imagePaths: ['']
+  nego: true,
+  imagePaths: []
 });
 
 @Component({
@@ -23,6 +24,7 @@ export class NewPostComponent implements OnInit {
   newEntry = Object.assign({}, DEFAULT_ENTRY);
 
   categories = this.dataService.categories;
+  nego_options = this.dataService.nego_options;
 
   constructor(private dataService: DataService) { }
 

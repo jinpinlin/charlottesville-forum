@@ -36,6 +36,13 @@
       </option>
       </select>
     </div>
+    <fieldset>
+      <p>Do you want the price to be negotiable?</p>
+      <div *ngFor="let option of nego_options">
+        <input type="radio" id="'nego_'+{{option}}" [value] = "option" name="nego" [(ngModel)]="newEntry.nego">
+        <label for="'nego_'+{{option}}"> {{option}}</label><br/>
+      </div>
+    </fieldset>
     <div class="row">
       <div class="col-md-12">
         <button category="submit" 
