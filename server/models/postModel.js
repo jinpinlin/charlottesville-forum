@@ -15,13 +15,16 @@ function BaseSchema() {
   
     this.add({
         id: { type: String, required: true},
-        title:{ type: String, required: true},
-        created: {type: Date, default: Date.now, required: true},
+        title: { type: String, required: true},
+        title_en: { type: String, required: false},
+        created: { type: Date, default: Date.now, required: true},
         desc: { type: String, required: true},
+        desc_en: { type: String, required: false},
         user: { type: String, required: true},
         email: { type: String, required: true},
         category: { type: String, required: true},
         nego: { type: Boolean, required: false},
+        attachment: { type: Boolean, required: false},        
         imagePaths: [{type: String, required: false}]
     });
   }
