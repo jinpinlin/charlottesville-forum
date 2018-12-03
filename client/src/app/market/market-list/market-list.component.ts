@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketEntry } from '../../models/market-entry.model';
 import { DataService } from '../../services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-market-list',
@@ -10,8 +11,13 @@ import { DataService } from '../../services/data.service';
 
 export class MarketListComponent implements OnInit {
   marketEntries: MarketEntry[];
+
+  subscriptionMarketEntries: Subscription;
   constructor(private dataSerive: DataService) {}
   ngOnInit() {
-    this.marketEntries = this.dataSerive.getMarketEntries();
+    this.subscriptionMarketEntries = this.dataSerive.getMarketEntries()
+                                                    .subscribe(
+                                                      marketEntries => 
+                                                      this.marketEntries = marketEntries);
   }
 }

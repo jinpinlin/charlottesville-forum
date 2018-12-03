@@ -16,7 +16,10 @@ export class MarketDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe( params =>
-      this.marketEntry = this.dataService.getMarketEntry(params['id'])
+      this.dataService.getMarketEntry(params['id'])
+                                          .then(marketEntry => {
+                                            console.log(marketEntry);
+                                            this.marketEntry = marketEntry; })
     );
   }
 

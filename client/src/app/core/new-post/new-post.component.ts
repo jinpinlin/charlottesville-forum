@@ -33,7 +33,8 @@ export class NewPostComponent implements OnInit {
   }
 
   onAddEntry() {
-    this.dataService.addEntry(this.newEntry);
+    this.dataService.addEntry(this.newEntry)
+                .catch(err => console.log(err.body));
     this.newEntry = Object.assign({}, DEFAULT_ENTRY);
   }
 
