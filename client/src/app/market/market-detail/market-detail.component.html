@@ -1,18 +1,17 @@
 <div class="container">
-  <h2>{{marketEntry.title}}</h2>
-  <h3>{{marketEntry.user}}</h3>
-  <p>{{marketEntry.desc}}</p>
+  <h2>{{marketEntry?.title}}</h2>
+  <h4>{{marketEntry?.user}} &lt;{{marketEntry?.email}}&gt; {{marketEntry?.created | date: 'medium'}}</h4>
+  <p>{{marketEntry?.desc}}</p>
   <ul style="list-style: none">
 
-      <li *ngFor="let item of marketEntry?.marketItems" style="float: left">
-        <div class="card" style="width: 8rem;">
-          <img class="card-img-top img-responsive rounded"
-          [src]="item.image">
-          <!-- <div class="card-body"> -->
-            <p  class="m-auto" >{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
-          <!-- </div> -->
-        </div>
-      </li>
+    <li *ngFor="let item of marketEntry?.marketItems" style="float: left">
+      <div class="card" style="width: 8rem;">
+        <img class="card-img-top img-responsive rounded" [src]="item.image">
+        <!-- <div class="card-body"> -->
+        <p class="m-auto">{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
+        <!-- </div> -->
+      </div>
+    </li>
 
-  </ul>   
+  </ul>
 </div>

@@ -11,13 +11,14 @@ import { Subscription } from 'rxjs';
 
 export class MarketListComponent implements OnInit {
   marketEntries: MarketEntry[];
+  p = 1;
 
   subscriptionMarketEntries: Subscription;
   constructor(private dataSerive: DataService) {}
   ngOnInit() {
     this.subscriptionMarketEntries = this.dataSerive.getMarketEntries()
                                                     .subscribe(
-                                                      marketEntries => 
+                                                      marketEntries =>
                                                       this.marketEntries = marketEntries);
   }
 }

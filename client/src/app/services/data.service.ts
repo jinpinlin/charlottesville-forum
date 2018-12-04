@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { MarketEntry } from '../models/market-entry.model';
 import { Entry } from '../models/entry.model';
-import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { TestBed } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,8 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getMarketEntries(): Observable<MarketEntry[]> {
-    this.http.get('api/v1/posts')
+    const params = new HttpParams().set('category', 'market');
+    this.http.get('api/v1/posts', {params: params})
              .toPromise()
              .then(
                (res: MarketEntry[]) => {
@@ -30,7 +30,8 @@ export class DataService {
   }
 
   getMarketEntry(id: string): Promise<MarketEntry> {
-    return this.http.get(`api/v1/posts/${id}`)
+    const params = new HttpParams().set('id', id);
+    return this.http.get('api/v1/posts', {params: params})
                     .toPromise()
                     .then((res: HttpResponse<any>) => res)
                     .catch(this.handleError);

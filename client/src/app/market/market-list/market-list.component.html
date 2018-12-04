@@ -1,7 +1,6 @@
 <div class="container">
-  
   <div class="col-xs-12 my-3">
-      <button class="btn btn-success" [routerLink]="['/new-post']" routerLinkActive="router-link-active" >New Post</button>
+    <button class="btn btn-success" [routerLink]="['/new-post']" routerLinkActive="router-link-active">New Post</button>
   </div>
   <hr>
   <!-- <ul class="list-group" >
@@ -38,18 +37,18 @@
     </li>  
   </ul>
 </div> -->
-<ul style="list-style: none">
-    <div class="container" *ngFor="let entry of marketEntries">
-        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <h5 class="mb-0">
-                <a class="text-dark" [routerLink]="['/market', entry.id]" routerLinkActive="router-link-active" >{{entry.title}}</a>
-              </h5>
-              <div class="mb-1 text-muted">{{entry.user}}</div>
-              <p class="card-text mb-auto">{{entry.desc | slice:0:110}}</p>
-              <!-- <a href="#">Continue reading</a> -->
-            </div>
-            <!-- <li *ngFor="let imagePath of entry.imagePaths" style="float: left">
+  <ul style="list-style: none">
+    <div class="container" *ngFor="let entry of marketEntries | paginate: { itemsPerPage: 8, currentPage: p }">
+      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="card-body d-flex flex-column align-items-start">
+          <h5 class="mb-0">
+            <a class="text-dark" [routerLink]="['/market', entry.id]" routerLinkActive="router-link-active">{{entry.title}}</a>
+          </h5>
+          <div class="mb-1 text-muted">{{entry.user}} &lt;{{entry.email}}&gt; {{entry.created | date: 'medium'}}</div>
+          <p class="card-text mb-auto">{{entry.desc | slice:0:110}}</p>
+          <!-- <a href="#">Continue reading</a> -->
+        </div>
+        <!-- <li *ngFor="let imagePath of entry.imagePaths" style="float: left">
               <div class="card" style="width: 8rem;">
                   <img
                   [src]="imagePath"
@@ -57,19 +56,19 @@
               </div>
             </li> -->
 
-            <li *ngFor="let item of entry.marketItems" style="float: left">
-              <div class="card" style="width: 8rem;">
-                <img class="card-img-top img-responsive rounded"
-                [src]="item.image">
-                <!-- <div class="card-body"> -->
-                  <p  class="m-auto" >{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
-                <!-- </div> -->
-              </div>
-            </li>          
-          <!-- <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap"> -->
-        </div>
-    </div>    
-</ul>
-
-
-
+        <li *ngFor="let item of entry.marketItems" style="float: left">
+          <div class="card" style="width: 8rem;">
+            <img class="card-img-top img-responsive rounded" [src]="item.image">
+            <!-- <div class="card-body"> -->
+            <p class="m-auto">{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
+            <!-- </div> -->
+          </div>
+        </li>
+        <!-- <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap"> -->
+      </div>
+    </div>
+  </ul>
+</div>
+<div class="container fixed-bottom mx-auto" style="width: 600px;">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event" autoHide=true navbar fixed-bottom></pagination-controls>
+</div>

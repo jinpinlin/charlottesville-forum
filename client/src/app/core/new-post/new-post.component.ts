@@ -5,8 +5,11 @@ import { DataService } from 'src/app/services/data.service';
 const DEFAULT_ENTRY: Entry = Object.freeze({
   id: '0',
   title: '',
+  title_en: '',
   desc: '',
+  desc_en: '',
   user: '',
+  created: undefined,
   email: '',
   category: '',
   nego: true,

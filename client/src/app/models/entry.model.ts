@@ -2,8 +2,11 @@
 export class Entry {
     id: string;
     title: string;
+    title_en: string;
     desc: string;
+    desc_en: string;
     user: string;
+    created: Date;
     email: string;
     category: string;
     nego?: boolean;
