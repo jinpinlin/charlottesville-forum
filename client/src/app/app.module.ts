@@ -21,6 +21,26 @@ import { AboutComponent } from './about/about.component';
 import { MarketDetailComponent } from './market/market-detail/market-detail.component';
 import { MarketEditComponent } from './market/market-edit/market-edit.component';
 import { NewPostComponent } from './core/new-post/new-post.component';
+import { NewPasswordComponent } from './auth/public/auth/newpassword/newpassword.component';
+import { LoginComponent } from './auth/public/auth/login/login.component';
+import { LogoutComponent, RegistrationConfirmationComponent } from './auth/public/auth/confirm/confirmRegistration.component';
+import { ResendCodeComponent } from './auth/public/auth/resend/resendCode.component';
+import { ForgotPasswordStep1Component, ForgotPassword2Component } from './auth/public/auth/forgot/forgotPassword.component';
+import { RegisterComponent } from './auth/public/auth/register/registration.component';
+import { MFAComponent } from './auth/public/auth/mfa/mfa.component';
+import { LoginHomeComponent, LoginAboutComponent, HomeLandingComponent } from './auth/public/home.component';
+import { UseractivityComponent } from './auth/secure/useractivity/useractivity.component';
+import { MyProfileComponent } from './auth/secure/profile/myprofile.component';
+import { SecureHomeComponent } from './auth/secure/landing/securehome.component';
+import { JwtComponent } from './auth/secure/jwttokens/jwt.component';
+import { CognitoUtil } from './auth/service/cognito.service';
+import { AwsUtil } from './auth/service/aws.service';
+import { DynamoDBService } from './auth/service/ddb.service';
+import { UserRegistrationService } from './auth/service/user-registration.service';
+import { UserLoginService } from './auth/service/user-login.service';
+import { UserParametersService } from './auth/service/user-parameters.service';
+import { SafePipe } from './pipes/safe.pipe';
+import { RentingDetailComponent } from './renting/renting-detail/renting-detail.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +60,41 @@ import { NewPostComponent } from './core/new-post/new-post.component';
     MarketDetailComponent,
     MarketEditComponent,
     NewPostComponent,
+    NewPasswordComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegistrationConfirmationComponent,
+    ResendCodeComponent,
+    ForgotPasswordStep1Component,
+    ForgotPassword2Component,
+    RegisterComponent,
+    MFAComponent,
+    LoginAboutComponent,
+    HomeLandingComponent,
+    LoginHomeComponent,
+    UseractivityComponent,
+    MyProfileComponent,
+    SecureHomeComponent,
+    JwtComponent,
+    AppComponent,
+    SafePipe,
+    RentingDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    // routing
   ],
-  providers: [],
+  providers: [
+    CognitoUtil,
+    AwsUtil,
+    DynamoDBService,
+    UserRegistrationService,
+    UserLoginService,
+    UserParametersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,9 +8,15 @@ const jsonParser = bodyParser.json();
 router.get('/posts', (req, res) => {
     var category = req.query.category;
     var id = req.query.id;
-    console.log(req);
     postService.getPosts(category, id)
     .then (posts => res.json(posts))
+});
+
+router.get('/posts/:id', (req, res) => {
+    var id = req.params.id;
+    console.log(id)
+    postService.getPost(id)
+    .then (post => res.json(post))
 });
 
 router.post('/posts', jsonParser, (req, res) => {
