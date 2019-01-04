@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CognitoUtil } from 'src/app/auth/service/cognito.service';
+import { UserLoginService } from 'src/app/auth/service/user-login.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  username: string;
 
+  constructor(private router: Router, private cognitoUtil: CognitoUtil, private userLoginService: UserLoginService ) { }
   ngOnInit() {
-  }
+    this.username = this.cognitoUtil.getCurrentUser().getUsername();
+    }
 
 }

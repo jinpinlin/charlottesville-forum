@@ -19,6 +19,13 @@ import { SecureHomeComponent } from './auth/secure/landing/securehome.component'
 import { JwtComponent } from './auth/secure/jwttokens/jwt.component';
 import { MyProfileComponent } from './auth/secure/profile/myprofile.component';
 import { UseractivityComponent } from './auth/secure/useractivity/useractivity.component';
+import { OthersListComponent } from './others/others-list/others-list.component';
+import { OthersDetailComponent } from './others/others-detail/others-detail.component';
+import { RidesDetailComponent } from './rides/rides-detail/rides-detail.component';
+import { RidesListComponent } from './rides/rides-list/rides-list.component';
+import { RentingListComponent } from './renting/renting-list/renting-list.component';
+import { RentingDetailComponent } from './renting/renting-detail/renting-detail.component';
+import { MarketListComponent } from './market/market-list/market-list.component';
 
 // const homeRoutes: Routes = [
 //   {
@@ -88,16 +95,33 @@ const routes: Routes = [
       redirectTo: '/home',
       pathMatch: 'full'
     },
-    { path: 'home', component: HomeComponent },
-    { path: 'market', component: MarketComponent },
-    { path: 'market/:id', component: MarketDetailComponent },
+    {
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full',
+    },
+    {path: 'home', component: HomeComponent},
+    { path: 'market', component: MarketComponent, children: [
+      { path: '', redirectTo: 'market-list', pathMatch: 'full'},
+      { path: 'market-list', component: MarketListComponent},
+      { path: 'market-detail/:id', component: MarketDetailComponent }
+    ]},
+    { path: 'renting', component: RentingComponent, children: [
+      { path: '', redirectTo: 'renting-list', pathMatch: 'full'},
+      { path: 'renting-list', component: RentingListComponent},
+      { path: 'renting-detail/:id', component: RentingDetailComponent }
+    ]},
+    { path: 'rides', component: RidesComponent, children: [
+      { path: '', redirectTo: 'rides-list', pathMatch: 'full'},
+      { path: 'rides-list', component: RidesListComponent},
+      { path: 'rides-detail/:id', component: RidesDetailComponent }
+    ]},
+    { path: 'others', component: OthersComponent, children: [
+      { path: '', redirectTo: 'others-list', pathMatch: 'full'},
+      { path: 'others-list', component: OthersListComponent},
+      { path: 'others-detail/:id', component: OthersDetailComponent }
+    ]},
     { path: 'new-post', component: NewPostComponent },
-    { path: 'renting', component: RentingComponent },
-    { path: 'renting/:id', component: RentingComponent },
-    { path: 'rides', component: RidesComponent },
-    { path: 'rides/:id', component: RidesComponent },
-    { path: 'others', component: OthersComponent },
-    { path: 'others/:id', component: OthersComponent },
     { path: 'about', component: AboutComponent },
     {
       path: 'loginhome',
@@ -122,6 +146,10 @@ const routes: Routes = [
         { path: 'myprofile', component: MyProfileComponent },
         { path: 'useractivity', component: UseractivityComponent },
         { path: '', component: MyProfileComponent }]
+    },
+    {
+      path: '**',
+      redirectTo: 'home'
     }
 
 ];

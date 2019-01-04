@@ -2,10 +2,6 @@ import {Injectable} from '@angular/core';
 import {Callback, CognitoUtil} from './cognito.service';
 import * as AWS from 'aws-sdk/global';
 
-/**
- * Created by Vladimir Budilov
- */
-
 // declare var AMA: any;
 
 @Injectable()

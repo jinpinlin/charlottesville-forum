@@ -67,11 +67,27 @@
     <form *ngIf="router.url !=='/'" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
+    <ng-template #signin>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/loginhome">Login</a>
+        </li>
+      </ul>
+    </ng-template>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/loginhome">Login</a>
-      </li>
-    </ul>
+    <ng-template #signout>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/securehome']" routerLinkActive="router-link-active" >{{username}}</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" (click)="this.userLoginService.logout()" [routerLink]="['/home']" routerLinkActive="router-link-active" >Log Out</a>
+        </li>
+      </ul>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="cognitoUtil.getCurrentUser()!=null ? signout: signin">
+    </ng-container>
   </div>
 </nav>

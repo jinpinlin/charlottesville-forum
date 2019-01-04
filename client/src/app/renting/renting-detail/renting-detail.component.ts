@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { RentingEntry } from '../../models/renting-entry.model';
+import { RentingEntry } from 'src/app/models/renting-entry.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-renting-detail',
@@ -16,17 +16,12 @@ export class RentingDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params['id']);
       this.dataService.getRentingEntry(params['id'])
         .then(rentingEntry => {
-          console.log(rentingEntry);
-          console.log(rentingEntry.imagePaths);
-          // if (rentingEntry.imagePaths.length !== 0) { rentingEntry.imagePaths = JSON.parse(rentingEntry.imagePaths[0]); }
           console.log(rentingEntry.imagePaths);
           this.rentingEntry = rentingEntry;
         });
     }
     );
   }
-
 }

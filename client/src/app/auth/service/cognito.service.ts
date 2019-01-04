@@ -5,11 +5,6 @@ import * as AWS from 'aws-sdk/global';
 import * as awsservice from 'aws-sdk/lib/service';
 import * as CognitoIdentity from 'aws-sdk/clients/cognitoidentity';
 
-
-/**
- * Created by Vladimir Budilov
- */
-
 export interface CognitoCallback {
     cognitoCallback(message: string, result: any): void;
 

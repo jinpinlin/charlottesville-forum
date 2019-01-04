@@ -21,4 +21,9 @@ export class RentingListComponent implements OnInit {
                                                       rentingEntries =>
                                                       this.rentingEntries = rentingEntries);
   }
+
+  pageChange(page: number) {
+    this.p = page;
+    window.scrollTo(0, 0);
+ }
 }

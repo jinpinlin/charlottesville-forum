@@ -3,9 +3,6 @@ import {CognitoUtil} from './cognito.service';
 import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
 
-/**
- * Created by Vladimir Budilov
- */
 
 
 export class S3Service {

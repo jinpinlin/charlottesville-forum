@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>{{ridesEntry?.title_en}}</h2>
+  <h4>{{ridesEntry?.user}} &lt;{{ridesEntry?.email}}&gt; {{ridesEntry?.created | date: 'medium'}}</h4>
+  <p>{{ridesEntry?.desc_en}}</p>
+  <ul style="list-style: none">
+    <li *ngFor="let item of ridesEntry?.ridesItems" style="float: left">
+      <div class="card" style="width: 8rem;">
+        <img class="card-img-top img-responsive rounded" [src]="item.image">
+        <!-- <div class="card-body"> -->
+        <p class="m-auto">{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
+        <!-- </div> -->
+      </div>
+    </li>
+  </ul>
+  <ul style="list-style: none">
+    <li *ngFor="let image of ridesEntry?.imagePaths" style="float: left">
+      <img [src]="image" alt="" class="img-thumbnail .img-fluid .img-responsive col-xs-12 col-md-6 col-lg-4">
+    </li>
+  </ul>
+
+  <!-- <ul style="list-style: none">
+      <li *ngFor="let item of ridesEntry?.imagePaths" style="float: left">
+        <div class="card" style="width: 8rem;">
+          <img class="card-img-top img-responsive rounded" [src]="image">
+        </div>
+      </li>
+    </ul> -->
+
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RidesEntry } from 'src/app/models/rides-entry.model';
+import { Subscription } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-rides-list',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RidesListComponent implements OnInit {
 
-  constructor() { }
+  ridesEntries: RidesEntry[];
+  p = 1;
 
+  subscriptionRidesEntries: Subscription;
+  constructor(private dataSerive: DataService) {}
   ngOnInit() {
+    this.subscriptionRidesEntries = this.dataSerive.getRidesEntries()
+                                                    .subscribe(
+                                                      ridesEntries =>
+                                                      this.ridesEntries = ridesEntries);
   }
 
+  pageChange(page: number) {
+    this.p = page;
+    window.scrollTo(0, 0);
+ }
 }

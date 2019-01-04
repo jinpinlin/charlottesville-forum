@@ -10,7 +10,6 @@ import { HeaderComponent } from './core/header/header.component';
 import { HomeComponent } from './core/home/home.component';
 import { MarketListComponent } from './market/market-list/market-list.component';
 import { RentingListComponent } from './renting/renting-list/renting-list.component';
-import { RentingEntryComponent } from './renting/renting-entry/renting-entry.component';
 import { RidesListComponent } from './rides/rides-list/rides-list.component';
 import { RidesEntryComponent } from './rides/rides-entry/rides-entry.component';
 import { RidesComponent } from './rides/rides.component';
@@ -19,7 +18,6 @@ import { MarketComponent } from './market/market.component';
 import { OthersComponent } from './others/others.component';
 import { AboutComponent } from './about/about.component';
 import { MarketDetailComponent } from './market/market-detail/market-detail.component';
-import { MarketEditComponent } from './market/market-edit/market-edit.component';
 import { NewPostComponent } from './core/new-post/new-post.component';
 import { NewPasswordComponent } from './auth/public/auth/newpassword/newpassword.component';
 import { LoginComponent } from './auth/public/auth/login/login.component';
@@ -39,8 +37,10 @@ import { DynamoDBService } from './auth/service/ddb.service';
 import { UserRegistrationService } from './auth/service/user-registration.service';
 import { UserLoginService } from './auth/service/user-login.service';
 import { UserParametersService } from './auth/service/user-parameters.service';
-import { SafePipe } from './pipes/safe.pipe';
 import { RentingDetailComponent } from './renting/renting-detail/renting-detail.component';
+import { RidesDetailComponent } from './rides/rides-detail/rides-detail.component';
+import { OthersDetailComponent } from './others/others-detail/others-detail.component';
+import { OthersListComponent } from './others/others-list/others-list.component';
 
 @NgModule({
   declarations: [
@@ -51,14 +51,16 @@ import { RentingDetailComponent } from './renting/renting-detail/renting-detail.
     MarketListComponent,
     RentingComponent,
     RentingListComponent,
-    RentingEntryComponent,
+    RentingDetailComponent,
     RidesComponent,
     RidesListComponent,
     RidesEntryComponent,
+    RidesDetailComponent,
     OthersComponent,
+    OthersDetailComponent,
+    OthersListComponent,
     AboutComponent,
     MarketDetailComponent,
-    MarketEditComponent,
     NewPostComponent,
     NewPasswordComponent,
     LoginComponent,
@@ -77,7 +79,6 @@ import { RentingDetailComponent } from './renting/renting-detail/renting-detail.
     SecureHomeComponent,
     JwtComponent,
     AppComponent,
-    SafePipe,
     RentingDetailComponent,
   ],
   imports: [

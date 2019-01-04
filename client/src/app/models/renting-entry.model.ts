@@ -1,7 +1,16 @@
 import { Entry } from './entry.model';
 
+interface RentingInfo {
+    location: string;
+    startTime: string;
+    endTime: string;
+    num: number;
+    price: number;
+}
+
+
 export class RentingEntry extends Entry {
-    rentingItems?: Array<{itemName: string, itemNum: Number; price: Number, image: string}>;
+    rentingInfo?: Array<RentingInfo>;
 
     constructor(
         id: string,
@@ -12,8 +21,8 @@ export class RentingEntry extends Entry {
         category: string,
         nego: boolean,
         imagePaths?: string[],
-        rentingItems?: Array<{itemName: string, itemNum: number, price: number, image: string }>) {
+        rentingInfo?: Array<RentingInfo>) {
         super(id, title, desc, user, email, category, nego, imagePaths);
-        this.rentingItems = rentingItems;
+        this.rentingInfo = rentingInfo;
     }
 }

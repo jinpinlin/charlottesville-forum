@@ -1,7 +1,16 @@
 import { Entry } from './entry.model';
 
+interface RidesInfo {
+    departureLoc: string;
+    arrivalLoc: string;
+    departureTime: string;
+    arrivalTime: string;
+    num: number;
+    price: number;
+}
+
 export class RidesEntry extends Entry {
-    ridesItems?: Array<{itemName: string, itemNum: Number; price: Number, image: string}>;
+    ridesInfo?: Array<RidesInfo>;
 
     constructor(
         id: string,
@@ -12,8 +21,8 @@ export class RidesEntry extends Entry {
         category: string,
         nego: boolean,
         imagePaths?: string[],
-        ridesItems?: Array<{itemName: string, itemNum: number, price: number, image: string }>) {
+        ridesInfo?:  Array<RidesInfo>) {
         super(id, title, desc, user, email, category, nego, imagePaths);
-        this.ridesItems = ridesItems;
+        this.ridesInfo = ridesInfo;
     }
 }

@@ -19,6 +19,12 @@ export class MarketListComponent implements OnInit {
     this.subscriptionMarketEntries = this.dataSerive.getMarketEntries()
                                                     .subscribe(
                                                       marketEntries =>
-                                                      this.marketEntries = marketEntries);
+                                                      {this.marketEntries = marketEntries;
+                                                      console.log(this.marketEntries[0]); });
   }
+
+  pageChange(page: number) {
+    this.p = page;
+    window.scrollTo(0, 0);
+ }
 }

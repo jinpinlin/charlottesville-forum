@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>{{othersEntry?.title_en}}</h2>
+  <h4>{{othersEntry?.user}} &lt;{{othersEntry?.email}}&gt; {{othersEntry?.created | date: 'medium'}}</h4>
+  <p>{{othersEntry?.desc_en}}</p>
+  <ul style="list-style: none">
+    <li *ngFor="let item of othersEntry?.othersItems" style="float: left">
+      <div class="card" style="width: 8rem;">
+        <img class="card-img-top img-responsive rounded" [src]="item.image">
+        <!-- <div class="card-body"> -->
+        <p class="m-auto">{{item.price | currency:'USD':true}} * {{item.itemNum}}</p>
+        <!-- </div> -->
+      </div>
+    </li>
+  </ul>
+  <ul style="list-style: none">
+    <li *ngFor="let image of othersEntry?.imagePaths" style="float: left">
+      <img [src]="image" alt="" class="img-thumbnail .img-fluid .img-responsive col-xs-12 col-md-6 col-lg-4">
+    </li>
+  </ul>
+
+  <!-- <ul style="list-style: none">
+      <li *ngFor="let item of othersEntry?.imagePaths" style="float: left">
+        <div class="card" style="width: 8rem;">
+          <img class="card-img-top img-responsive rounded" [src]="image">
+        </div>
+      </li>
+    </ul> -->
+
+</div>
