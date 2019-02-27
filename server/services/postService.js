@@ -1,8 +1,8 @@
 const uuidv4 = require('uuid/v4');
 const AWS = require('aws-sdk');
 
-const dynamodb_config_location = 'C:\\Users\\jl4sh\\Documents\\charlottesville-forum\\server\\credentials\\aws_config.json';
-AWS.config.loadFromPath(dynamodb_config_location);
+// const dynamodb_config_location = 'C:\\Users\\jl4sh\\Documents\\charlottesville-forum\\server\\credentials\\aws_config.json';
+// AWS.config.loadFromPath(dynamodb_config_location);
 AWS.config.apiVersions = {
     dynamodb: '2012-08-10',
     // s3: '2006-03-01'

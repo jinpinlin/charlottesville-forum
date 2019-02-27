@@ -94,7 +94,7 @@ export class NewPostComponent implements OnInit {
   // }
 
   postFile(fileToUpload: File): Observable<any> {
-    const endpoint = 'http://54.174.169.114:5000';
+    const endpoint = 'http://3.86.86.151:5000';
     // const endpoint = 'http://0.0.0.0:5000';
     return this.httpClient.post(endpoint,
       this.selectedFile,
